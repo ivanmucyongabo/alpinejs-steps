@@ -1,0 +1,36 @@
+<section class="row">
+    <h2>Wizard usage</h2>
+    <div class="col">
+        <div x-data='steps(<%- JSON.stringify(steps) %>)'>
+            <div class="progress">
+                <div 
+                class="progress-bar" 
+                role="progressbar" 
+                aria-label="Wizard example"
+                aria-valuemin="0"
+                x-bind:style="\`width: \${(currentStepIndex/length)*100}%;\`" 
+                x-bind:aria-valuenow="currentStepIndex" 
+                x-bind:aria-valuemax="length"></div>
+            </div>  
+
+            <div class="p-5 bg-light">
+                <% for (var i=0; i<=steps.length;  i++) { %>
+                    <div x-show="isActive('<%= steps[i] %>')"><%= steps[i] %></div>
+                <% } %>
+            </div>
+
+            <div>
+                <button 
+                type="button"
+                class="btn btn-secondary"
+                x-bind:disabled="!pickPrevious()"
+                x-on:click="transitionToPrevious()">Previous</button>
+                <button 
+                type="button"
+                class="btn btn-primary"
+                x-bind:disabled="!pickNext()"
+                x-on:click="transitionToNext()">Next</button>
+            </div>
+        </div>
+    </div>
+</section>

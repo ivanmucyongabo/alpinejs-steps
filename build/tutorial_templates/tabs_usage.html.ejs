@@ -1,0 +1,38 @@
+<section class="row">
+    <h2>Tabs usage</h2>
+    <div class="col">
+        <div x-data='steps(<%- JSON.stringify(steps) %>)'>
+            <div role="tablist" class="nav nav-tabs">
+                <% for (var i=0; i<=steps.length;  i++) { %>
+                    <div 
+                    id="tab-<%= i %>"
+                    class="nav-item"
+                    role="tab"
+                    aria-controls="tabpanel-<%= i %>"
+                    x-bind:aria-selected="isActive('<%= steps[i] %>')"
+                    x-on:click="transitionTo('<%= steps[i] %>')">
+                        <a 
+                        class="nav-link"
+                        href="#"
+                        x-bind:class="isActive('<%= steps[i] %>') && 'active'">
+                            <%= steps[i] %>
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="p-5 bg-light">
+                <% for (var i=0; i<=steps.length;  i++) { %>
+                    <div 
+                    role="tabpanel"
+                    tabindex="0"
+                    id="tabpanel-<%= i %>"
+                    aria-labelledby="tab-<%= i %>"
+                    x-show="isActive('<%= steps[i] %>')">
+                        <%= steps[i] %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>

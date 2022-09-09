@@ -1,0 +1,9 @@
+# Ignore artifacts:
+node_modules/
+coverage/
+dist/
+demo/
+build/
+docs/
+tutorials/
+v1/
