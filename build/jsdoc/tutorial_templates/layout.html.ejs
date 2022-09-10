@@ -11,12 +11,9 @@
 <%- content %>
 
 <script>
-    console.info("Hello World!")
-    console.log(window)
-    if (Alpine) {
-        console.info("Alpine is here")
-    }
-    document.addEventListener('alpine:init', () => {
-    Alpine.data('steps', AlpineSteps.StepsComponent)
-    })
+    window.addEventListener('load', function() {
+        if (Alpine) {
+            Alpine.data('steps', AlpineSteps.StepsComponent)            
+        }
+    });
 </script>
