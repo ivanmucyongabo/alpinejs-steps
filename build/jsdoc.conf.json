@@ -5,6 +5,7 @@
         "destination": "docs",
         "recurse": true,
         "tutorials": "tutorials",
-        "readme": "README.md"
-    }    
+        "readme": "README.md",
+        "template": "build/jsdoc/default"
+    }
 }

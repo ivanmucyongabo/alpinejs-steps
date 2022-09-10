@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 
 function getBanner(pluginFilename) {
   return `/*!
-  * Alpine Steps${pluginFilename ? ` ${pluginFilename}` : ""} v${pkg.version} (${
+  * alpinejs-steps${pluginFilename ? ` ${pluginFilename}` : ""} v${pkg.version} (${
     pkg.homepage
   })
   * Copyright 2021-${year} ${pkg.author}

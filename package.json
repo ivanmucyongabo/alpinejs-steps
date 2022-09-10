@@ -1,9 +1,9 @@
 {
   "name": "alpinejs-steps",
   "version": "1.0.0",
-  "description": "A step component for Alpine.js",
-  "browser": "dist/index.bundle.js",
-  "main": "dist/index.js",
+  "description": "A controller for stepwise UI components.",
+  "browser": "dist/steps.bundle.js",
+  "main": "dist/steps.js",
   "files": [
     "dist"
   ],
@@ -51,14 +51,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivanmucyongabo/alpine-steps.git"
+    "url": "git+https://github.com/ivanmucyongabo/alpinejs-steps.git"
   },
   "author": "Ivan Mucyo Ngabo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ivanmucyongabo/alpine-steps/issues"
+    "url": "https://github.com/ivanmucyongabo/alpinejs-steps/issues"
   },
-  "homepage": "https://github.com/ivanmucyongabo/alpine-steps#readme",
+  "homepage": "https://github.com/ivanmucyongabo/alpinejs-steps#readme",
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@babel/preset-env": "^7.19.0",

@@ -1,5 +1,5 @@
 /*!
-  * Alpine Steps v1.0.0 (https://github.com/ivanmucyongabo/alpine-steps#readme)
+  * alpinejs-steps v1.0.0 (https://github.com/ivanmucyongabo/alpinejs-steps#readme)
   * Copyright 2021-2022 Ivan Mucyo Ngabo
   * Licensed under MIT (https://github.com/ivanmucyongabo/alpinejs-steps/blob/main/LICENSE)
   */

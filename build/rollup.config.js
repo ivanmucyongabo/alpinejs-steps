@@ -44,8 +44,8 @@ export default (commandLineArgs) => {
     }),
     nodeResolve(),
     emitEJS({
-      src: "build/tutorial_templates",
-      layout: "build/tutorial_templates/layout.html.ejs",
+      src: "build/jsdoc/tutorial_templates",
+      layout: "build/jsdoc/tutorial_templates/layout.html.ejs",
       // dest: "tutorials",
       data: {
         title: "Alpine Steps Tutorials",

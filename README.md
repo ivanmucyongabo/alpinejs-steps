@@ -13,21 +13,23 @@ With the download you'll find the following directoryies and files, with both co
 
 <details>
     <summary>Download contents</summary>
+
     ```text
-    alpine-steps/dist/
-    ├── index.bundle.js
-    ├── index.bundle.js.map
-    ├── index.bundle.min.js
-    ├── index.bundle.min.js.map
-    ├── index.esm.js
-    ├── index.esm.js.map
-    ├── index.esm.min.js
-    ├── index.esm.min.js.map
-    ├── index.js
-    ├── index.js.map
-    ├── index.min.js
-    └──  index.min.js.map
+    debug-console/dist/
+    ├── steps.bundle.js
+    ├── steps.bundle.js.map
+    ├── steps.bundle.min.js
+    ├── steps.bundle.min.js.map
+    ├── steps.esm.js
+    ├── steps.esm.js.map
+    ├── steps.esm.min.js
+    ├── steps.esm.min.js.map
+    ├── steps.js
+    ├── steps.js.map
+    ├── steps.min.js
+    └── steps.min.js.map
     ```
+
 </details>
 
 ## Usage
@@ -84,6 +86,10 @@ indext.html
 </html>
 ```
 
+## Tutorials
+
+The above examples show the basic idea, but there're other ways to use it. Take a look at [the tutorials][tutorials] for some examples.
+
 Even though it is built with AlpineJs in mind.
 Because of how decoupled it is, integration with
 other projects focused on server rendered html, like Stimulus.
@@ -91,3 +97,5 @@ other projects focused on server rendered html, like Stimulus.
 ## Copyright and license
 
 Code copyright 2021–2022. Code released under the [MIT License](https://github.com/ivanmucyongabo/alpinejs-steps/blob/main/LICENSE).
+
+[tutorials]: https://ivanmucyongabo.github.io/alpinejs-steps/tutorial-index_.html
