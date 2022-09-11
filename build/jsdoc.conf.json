@@ -1,5 +1,6 @@
 {
     "plugins": ["plugins/markdown"],
+    "recurseDepth": 10,
     "opts": {
         "encoding": "utf8",
         "destination": "docs",
@@ -7,5 +8,14 @@
         "tutorials": "tutorials",
         "readme": "README.md",
         "template": "build/jsdoc/default"
-    }
+    },
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    }    
 }

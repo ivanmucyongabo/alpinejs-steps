@@ -1,7 +1,7 @@
 "use strict";
 /**
- * Alpine Steps
- * @module alpinejs-steps
+ * A controller for stepwise UI components.
+ * @module AlpineSteps
  */
 
 /**
@@ -199,7 +199,9 @@ export class StepsController {
 }
 
 /**
- * @typedef {Object} StepsComponentData
+ * StepsController as a plain js object.
+ *
+ * @typedef {Object} StepsControllerObject
  * @property {string[]|Object[]} steps - Step items.
  * @property {string} currentStep - The name of the active step item.
  * @property {boolean} circular - If circular indexing is enabled.
@@ -208,27 +210,29 @@ export class StepsController {
  * @property {number} currentIndex - 0 based index of active step.
  * @property {string} firstStepName - Name of first step item.
  * @property {string|Object} currentStepNode - The active step item.
- * @method isActive - Validate if step is active by name.
- * @method transitionTo - Activate step by name.
- * @method transitionToNext - Activate the next step.
- * @method transitionToPrevious - Activate the previous step.
- * @method activate - Set current step by name.
- * @method pickNext - Get the next available step item.
- * @method pickPrevious - Get the previous available step item.
- * @method incrementIndex - Increment the index.
- * @method getIndex - Get the 1 based index of the step by name.
- * @method init - Required by Alpine for automatic execution.
+ * @property {function(string=):boolean} isActive - Validate if step is active by name.
+ * @property {function(string=):boolean} transitionTo - Activate step by name.
+ * @property {function():boolean} transitionToNext - Activate the next step.
+ * @property {function():boolean} transitionToPrevious - Activate the previous step.
+ * @property {function(string=):boolean} activate - Set current step by name.
+ * @property {function():boolean|string} pickNext - Get the next available step item.
+ * @property {function():boolean|string} pickPrevious - Get the previous available step item.
+ * @property {function(number=):number} incrementIndex - Increment the index.
+ * @property {function(string=):number} getIndex - Get the 1 based index of the step by name.
+ * @property {function():void} init - Required by Alpine for automatic execution.
  */
+var StepsControllerObject;
 
 /**
- * Callback function for building a step component.
+ * Callback function for building a steps controller as a plain js object.
  *
- * Usage Examples {@tutorial usage-tutorial}
+ * [Usage Example]{@tutorial basic_usage.html}
  *
+ * @function StepsComponent
  * @param {string[]|Object[]} model - Step items.
  * @param {boolean} circular - Allow circular step indexing.
  * @param {string} initialStep - Name of step to start with.
- * @returns {StepsComponentData}
+ * @returns {StepsControllerObject} A {@link StepsControllerObject} object
  */
 export const StepsComponent = (model = [], circular = false, initialStep) => ({
   steps: model,
@@ -280,6 +284,11 @@ export const StepsComponent = (model = [], circular = false, initialStep) => ({
   },
   activate(step) {
     const name = step.name || step;
+
+    if (this.getIndex(name) <= 0) {
+      return false;
+    }
+
     this.currentStep = name;
 
     return true;

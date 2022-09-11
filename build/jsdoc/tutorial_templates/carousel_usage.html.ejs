@@ -1,54 +1,51 @@
-<section class="row">
-    <h2>Carousel usage</h2>
-    <div class="col">
-        <div x-data='steps(<%- JSON.stringify(steps) %>, true)'>
-            <div 
-            id="carousel"
-            class="carousel slide"
-            aria-roledescription="carousel"
-            aria-label="Placeholder images">
-                <div class="carousel-indicators">
-                    <% for (var i=0; i<=steps.length;  i++) { %>
-                        <button 
-                        type="button" 
-                        aria-controls="carousel-items"
-                        aria-label="<%= steps[i] %>"
-                        data-bs-target=""
-                        x-bind:class="isActive('<%= steps[i] %>') && 'active'" 
-                        x:bind:aria-current="isActive('<%= steps[i] %>')  && 'true'"></button>                    
-                    <% } %>
-                </div>
-
-                <div class="carousel-inner" id="carousel-items" aria-live="off">
-                    <% for (var i=0; i<=steps.length;  i++) { %>
-                        <div 
-                        class="carousel-item" 
-                        role="group"
-                        aria-roledescription="slide"
-                        x-bind:aria-label="getIndex('<%= steps[i] %>')"
-                        x-bind:class="isActive('<%= steps[i] %>') && 'active'">
-                        <img src="https://via.placeholder.com/350x150/000000/FFFFFF/?text=<%= steps[i] %>" class="d-block w-100" alt="<%= steps[i] %>">
-                        </div>`
-                    <% } %>
-                </div>
-
+<%- include('partial_header'); -%>
+<div x-data='steps(<%- JSON.stringify(steps) %>, true)'>
+    <div 
+    id="carousel"
+    class="carousel slide"
+    aria-roledescription="carousel"
+    aria-label="Placeholder images">
+        <div class="carousel-indicators">
+            <% for (var i=0; i<=steps.length;  i++) { %>
                 <button 
-                class="carousel-control-prev" 
-                type="button"
+                type="button" 
                 aria-controls="carousel-items"
-                aria-label="Previous Slide"
-                x-on:click="transitionToPrevious()">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button 
-                class="carousel-control-next" 
-                type="button"
-                aria-controls="carousel-items"
-                aria-label="Next Slide"
-                x-on:click="transitionToNext()">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
-            </div>
-        </div>    
+                aria-label="<%= steps[i] %>"
+                data-bs-target=""
+                x-bind:class="isActive('<%= steps[i] %>') && 'active'" 
+                x:bind:aria-current="isActive('<%= steps[i] %>')  && 'true'"></button>                    
+            <% } %>
+        </div>
+
+        <div class="carousel-inner" id="carousel-items" aria-live="off">
+            <% for (var i=0; i<=steps.length;  i++) { %>
+                <div 
+                class="carousel-item" 
+                role="group"
+                aria-roledescription="slide"
+                x-bind:aria-label="getIndex('<%= steps[i] %>')"
+                x-bind:class="isActive('<%= steps[i] %>') && 'active'">
+                <img src="https://via.placeholder.com/350x150/000000/FFFFFF/?text=<%= steps[i] %>" class="d-block w-100" alt="<%= steps[i] %>">
+                </div>`
+            <% } %>
+        </div>
+
+        <button 
+        class="carousel-control-prev" 
+        type="button"
+        aria-controls="carousel-items"
+        aria-label="Previous Slide"
+        x-on:click="transitionToPrevious()">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button 
+        class="carousel-control-next" 
+        type="button"
+        aria-controls="carousel-items"
+        aria-label="Next Slide"
+        x-on:click="transitionToNext()">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
     </div>
-</section>
+</div>    
+<%- include('partial_footer'); -%>
